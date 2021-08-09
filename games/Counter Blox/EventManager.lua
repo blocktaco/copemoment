@@ -63,13 +63,13 @@ mt.__namecall = function(self,...)
 		spawn(function()
 		    if game.Players:GetPlayerFromCharacter(args[1].Parent) then
 		        print('Possible HitEvent')
-		        spawn(function()
+		        --[[spawn(function()
 		            handleHitEvent(game.Players:GetPlayerFromCharacter(args[1].Parent))  
 		        end)
 		        
 		        spawn(function()
 		            handleKillEvent(game.Players:GetPlayerFromCharacter(args[1].Parent)) 
-		        end)
+		        end)]]
 		    end
 		end)
 	end

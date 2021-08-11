@@ -32,14 +32,15 @@ function Draw:Text(text, position, center)
     return text
 end
 
-function Draw:Square(position, size, color)
+function Draw:Square(position, size, color, transparency)
     local square = Drawing.new('Square')
     square.Visible = true
+    square.Transparency = transparency
     square.Thickness = 1
     square.Filled = true
     square.Size = size
     square.Position = position or Vector2.new()
-    square.Color = color
+    square.Color = color or Color3.new(0, 0, 0)
 
     return square
 end

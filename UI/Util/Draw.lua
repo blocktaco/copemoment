@@ -45,7 +45,7 @@ function Draw:Square(position, size, color, transparency)
     return square
 end
 
-function Draw:Image(position, size, data)
+function Draw:Image(position, size, data, transparency)
     local image = Drawing.new('Image')
     image.Visible = true
     image.Size = size

@@ -32,10 +32,9 @@ function Draw:Text(text, position, center)
     return text
 end
 
-function Draw:Square(position, size, color, transparency)
+function Draw:Square(position, size, color, visible)
     local square = Drawing.new('Square')
-    square.Visible = true
-    square.Transparency = transparency or 1
+    square.Visible = visible or true
     square.Thickness = 1
     square.Filled = true
     square.Size = size
@@ -45,13 +44,25 @@ function Draw:Square(position, size, color, transparency)
     return square
 end
 
-function Draw:Image(position, size, data, transparency)
+function Draw:Image(position, size, data, visible)
     local image = Drawing.new('Image')
-    image.Visible = true
+    image.Visible = visible or true
     image.Size = size
     image.Position = position
     image.Data = Draw:HandleImageCache(data)
-    image.Transparency = transparency or 1
+end
+
+
+function Draw:UpdatePosition(drawing, position)
+    drawing.Position = position
+end
+
+function Draw:UpdateSize(drawing, size)
+    drawing.Size = size
+end
+
+function Draw:UpdateVisibility(drawing, visible)
+    drawing.Visible = visible
 end
 
 return Draw;

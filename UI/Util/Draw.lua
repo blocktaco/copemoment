@@ -44,12 +44,26 @@ function Draw:Square(position, size, color, visible)
     return square
 end
 
+function Draw:SquareOutline(position, size, color, thickness, visible)
+    local square = Drawing.new('Square')
+    square.Visible = visible or true
+    square.Thickness = 1
+    square.Filled = false
+    square.Size = size
+    square.Position = position or Vector2.new()
+    square.Color = color or Color3.new(0, 0, 0)
+
+    return square
+end
+
 function Draw:Image(position, size, data, visible)
     local image = Drawing.new('Image')
     image.Visible = visible or true
     image.Size = size
     image.Position = position
     image.Data = Draw:HandleImageCache(data)
+
+    return image
 end
 
 
